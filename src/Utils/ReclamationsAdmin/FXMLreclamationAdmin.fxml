@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="window" prefHeight="590.0" prefWidth="1094.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utils.ReclamationsAdmin.FXMLreclamationController">
+   <children>
+      <ImageView fitHeight="654.0" fitWidth="1128.0" layoutX="-10.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/5.jpg" />
+         </image></ImageView>
+      <JFXTreeTableView fx:id="ReclamationTable" editable="true" layoutX="41.0" layoutY="147.0" opacity="0.63" prefHeight="413.0" prefWidth="1019.0" stylesheets="@../../css/Master.css" tableMenuButtonVisible="true">
+         <columns>
+            <TreeTableColumn fx:id="objet" prefWidth="220.0" text="Objet" />
+            <TreeTableColumn fx:id="text" minWidth="0.0" prefWidth="300.0" text="Text" />
+            <TreeTableColumn fx:id="type" prefWidth="128.0" text="Type" />
+            <TreeTableColumn fx:id="date" prefWidth="128.0" text="Date" />
+            <TreeTableColumn fx:id="repondre" prefWidth="128.0" text="Répondre" />
+            <TreeTableColumn fx:id="supprimer" prefWidth="128.0" text="Supprimer" />
+         </columns>
+         <effect>
+            <DropShadow height="68.07" radius="33.6275" width="68.44" />
+         </effect>
+      </JFXTreeTableView>
+      <AnchorPane fx:id="rep" layoutX="150.0" layoutY="140.0" prefHeight="384.0" prefWidth="750.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian,rgb(0.0,0.0,0.0,0.15),6.0,0.7,0.0,1.5);" stylesheets="@../../css/Master.css" visible="false">
+         <children>
+            <ImageView fitHeight="541.0" fitWidth="869.0" layoutX="-18.0" layoutY="-108.0" pickOnBounds="true" preserveRatio="true">
+              
+            </ImageView>
+            <Label fx:id="titrer" layoutX="100.0" layoutY="21.0" prefHeight="39.0" prefWidth="468.0" styleClass="titre" stylesheets="@../../../css/Master.css" text="Objet">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="textr" layoutX="108.0" layoutY="152.0" prefHeight="57.0" prefWidth="584.0" wrapText="true">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="dater" layoutX="583.0" layoutY="21.0" prefHeight="32.0" prefWidth="198.0" styleClass="date" stylesheets="@../../../css/Master.css" text="label" />
+            <Label fx:id="utilisateurr" layoutX="25.0" layoutY="18.0" prefHeight="39.0" prefWidth="425.0" styleClass="names" stylesheets="@../../../css/Master.css" text="Type " textFill="#1f6168">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <JFXTextArea fx:id="reponser" layoutX="125.0" layoutY="217.0" prefHeight="148.0" prefWidth="550.0" promptText="Entrez votre réponse ..." visible="false" wrapText="true" />
+            <JFXTextArea fx:id="supprimmer" layoutX="135.0" layoutY="227.0" prefHeight="148.0" prefWidth="550.0" promptText="Entrez votre réponse ..." visible="false" wrapText="true" />
+            <Label fx:id="reptext" layoutX="150.0" layoutY="260.0" prefHeight="69.0" prefWidth="526.0" text="Label" wrapText="true">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+            <Separator fx:id="separator" layoutX="53.0" layoutY="207.0" prefHeight="4.0" prefWidth="696.0" />
+            <Label fx:id="datereponse" layoutX="369.0" layoutY="226.0" prefHeight="32.0" prefWidth="414.0" styleClass="date" stylesheets="@../../../css/Master.css" text="label" />
+            <JFXButton fx:id="btnAnnuler" alignment="CENTER" layoutX="150.0" layoutY="387.0" onAction="#annuler" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #DD4B39;" text="Annuler" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="16" wrappingWidth="25.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnEnregistrer" alignment="CENTER" layoutX="517.0" layoutY="387.0" onAction="#enregistrer" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: #0dff3d;" text="Enregister" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="EXTERNAL_LINK" size="16" text="" wrappingWidth="25.0" />
+               </graphic>
+            </JFXButton>
+            <Label fx:id="utilisateurr1" layoutX="25.0" layoutY="156.0" prefHeight="39.0" prefWidth="425.0" styleClass="names" stylesheets="@../../../css/Master.css" text="Text " textFill="RED">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField layoutX="42.0" layoutY="175.0" prefHeight="31.0" prefWidth="696.0" stylesheets="@../../css/Master.css" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="lab" layoutX="964.0" layoutY="42.0" stylesheets="@../../css/Master.css" text="Label" visible="false" />
+      <JFXTextField fx:id="filtre" layoutX="767.0" layoutY="59.0" prefHeight="31.0" prefWidth="293.0" promptText="Rechercher" style="-fx-background-color: white;" stylesheets="@../../css/Master.css" />
+      <ImageView fitHeight="50.0" fitWidth="47.0" layoutX="127.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons8_Box_32px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="390.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons8_Open_Envelope_32px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="611.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons8_Sign_Out_32px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="737.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/icons8_Slider__32px.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
